@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: 28d296805452b024d8f0de0e0d8d3a7d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: Body1
+    100004: Body1 (1)
+    100006: Body1 (1) 1
+    100008: Body1 (1) 10
+    100010: Body1 (1) 11
+    100012: Body1 (1) 2
+    100014: Body1 (1) 3
+    100016: Body1 (1) 4
+    100018: Body1 (1) 5
+    100020: Body1 (1) 6
+    100022: Body1 (1) 7
+    100024: Body1 (1) 8
+    100026: Body1 (1) 9
+    100028: Body1 (2)
+    100030: Body1 (2) 1
+    100032: Body1 (2) 10
+    100034: Body1 (2) 11
+    100036: Body1 (2) 2
+    100038: Body1 (2) 3
+    100040: Body1 (2) 4
+    100042: Body1 (2) 5
+    100044: Body1 (2) 6
+    100046: Body1 (2) 7
+    100048: Body1 (2) 8
+    100050: Body1 (2) 9
+    100052: Body1 1
+    100054: Body1 10
+    100056: Body1 11
+    100058: Body1 12
+    100060: Body1 13
+    100062: Body1 14
+    100064: Body1 15
+    100066: Body1 16
+    100068: Body1 17
+    100070: Body1 18
+    100072: Body1 19
+    100074: Body1 2
+    100076: Body1 20
+    100078: Body1 21
+    100080: Body1 22
+    100082: Body1 23
+    100084: Body1 24
+    100086: Body1 25
+    100088: Body1 26
+    100090: Body1 27
+    100092: Body1 28
+    100094: Body1 29
+    100096: Body1 3
+    100098: Body1 4
+    100100: Body1 5
+    100102: Body1 6
+    100104: Body1 7
+    100106: Body1 8
+    100108: Body1 9
+    100110: Body6
+    100112: Body:1
+    100114: Component25
+    100116: Component25(Mirror)
+    100118: Component25(Mirror):1
+    100120: Component25:1
+    100122: Component6
+    100124: Component6 1
+    100126: Component6 2
+    100128: Component6 3
+    100130: Component6 4
+    100132: Component6 5
+    100134: Component6(Mirror)
+    100136: Component6(Mirror) 1
+    100138: Component6(Mirror) 2
+    100140: Component6(Mirror) 3
+    100142: Component6(Mirror) 4
+    100144: Component6(Mirror) 5
+    100146: Component6(Mirror):1
+    100148: Component6(Mirror):1 1
+    100150: Component6(Mirror):1 2
+    100152: Component6(Mirror):1 3
+    100154: Component6(Mirror):1 4
+    100156: Component6(Mirror):1 5
+    100158: Component6:1
+    100160: Component6:1 1
+    100162: Component6:1 2
+    100164: Component6:1 3
+    100166: Component6:1 4
+    100168: Component6:1 5
+    100170: Czujnik kontaktowy v1
+    100172: Czujnik kontaktowy v1 1
+    100174: Czujnik kontaktowy v1 2
+    100176: Czujnik kontaktowy v1(Mirror)
+    100178: Czujnik kontaktowy v1(Mirror) 1
+    100180: Czujnik kontaktowy v1(Mirror) 2
+    100182: Czujnik kontaktowy v1(Mirror):1
+    100184: Czujnik kontaktowy v1(Mirror):1 1
+    100186: Czujnik kontaktowy v1(Mirror):1 2
+    100188: Czujnik kontaktowy v1:1
+    100190: Czujnik kontaktowy v1:1 1
+    100192: Czujnik kontaktowy v1:1 2
+    100194: lydka
+    100196: lydka 1
+    100198: lydka 2
+    100200: lydka(Mirror)
+    100202: lydka(Mirror) 1
+    100204: lydka(Mirror) 2
+    100206: lydka(Mirror):1
+    100208: lydka(Mirror):1 1
+    100210: lydka(Mirror):1 2
+    100212: lydka:1
+    100214: lydka:1 1
+    100216: lydka:1 2
+    100218: Noga v11
+    100220: Noga v11 1
+    100222: Noga v11 2
+    100224: Noga v11:1
+    100226: Noga v11:2
+    100228: Noga v11:3
+    100230: Noga v4(Mirror)
+    100232: Noga v4(Mirror) 1
+    100234: Noga v4(Mirror) 2
+    100236: Noga v4(Mirror):1
+    100238: Noga v4(Mirror):2
+    100240: Noga v4(Mirror):3
+    100242: //RootNode
+    100244: Servo
+    100246: Servo 1
+    100248: Servo 2
+    100250: Servo 3
+    100252: Servo 4
+    100254: Servo 5
+    100256: Servo connector
+    100258: Servo connector 1
+    100260: Servo connector 10
+    100262: Servo connector 11
+    100264: Servo connector 2
+    100266: Servo connector 3
+    100268: Servo connector 4
+    100270: Servo connector 5
+    100272: Servo connector 6
+    100274: Servo connector 7
+    100276: Servo connector 8
+    100278: Servo connector 9
+    100280: Servo(Mirror)
+    100282: Servo(Mirror) 1
+    100284: Servo(Mirror) 2
+    100286: Servo(Mirror) 3
+    100288: Servo(Mirror) 4
+    100290: Servo(Mirror) 5
+    100292: Servo(Mirror):1
+    100294: Servo(Mirror):1 1
+    100296: Servo(Mirror):1 2
+    100298: Servo(Mirror):2
+    100300: Servo(Mirror):2 1
+    100302: Servo(Mirror):2 2
+    100304: Servo:1
+    100306: Servo:1 1
+    100308: Servo:1 2
+    100310: Servo:2
+    100312: Servo:2 1
+    100314: Servo:2 2
+    100316: Skrzydlo v1
+    100318: Skrzydlo v1 1
+    100320: Skrzydlo v1 2
+    100322: Skrzydlo v1 3
+    100324: Skrzydlo v1 4
+    100326: Skrzydlo v1 5
+    100328: Skrzydlo v1(Mirror) (2)
+    100330: Skrzydlo v1(Mirror) (2) 1
+    100332: Skrzydlo v1(Mirror) (2) 2
+    100334: Skrzydlo v1(Mirror) (2) 3
+    100336: Skrzydlo v1(Mirror) (2) 4
+    100338: Skrzydlo v1(Mirror) (2) 5
+    100340: Skrzydlo v1(Mirror) (2):1
+    100342: Skrzydlo v1(Mirror) (2):1 1
+    100344: Skrzydlo v1(Mirror) (2):1 2
+    100346: Skrzydlo v1(Mirror) (2):2
+    100348: Skrzydlo v1(Mirror) (2):2 1
+    100350: Skrzydlo v1(Mirror) (2):2 2
+    100352: Skrzydlo v1:1
+    100354: Skrzydlo v1:1 1
+    100356: Skrzydlo v1:1 2
+    100358: Skrzydlo v1:2
+    100360: Skrzydlo v1:2 1
+    100362: Skrzydlo v1:2 2
+    100364: udo
+    100366: udo 1
+    100368: udo 2
+    100370: udo(Mirror)
+    100372: udo(Mirror) 1
+    100374: udo(Mirror) 2
+    100376: udo(Mirror):1
+    100378: udo(Mirror):1 1
+    100380: udo(Mirror):1 2
+    100382: udo:1
+    100384: udo:1 1
+    100386: udo:1 2
+    400000: Body
+    400002: Body1
+    400004: Body1 (1)
+    400006: Body1 (1) 1
+    400008: Body1 (1) 10
+    400010: Body1 (1) 11
+    400012: Body1 (1) 2
+    400014: Body1 (1) 3
+    400016: Body1 (1) 4
+    400018: Body1 (1) 5
+    400020: Body1 (1) 6
+    400022: Body1 (1) 7
+    400024: Body1 (1) 8
+    400026: Body1 (1) 9
+    400028: Body1 (2)
+    400030: Body1 (2) 1
+    400032: Body1 (2) 10
+    400034: Body1 (2) 11
+    400036: Body1 (2) 2
+    400038: Body1 (2) 3
+    400040: Body1 (2) 4
+    400042: Body1 (2) 5
+    400044: Body1 (2) 6
+    400046: Body1 (2) 7
+    400048: Body1 (2) 8
+    400050: Body1 (2) 9
+    400052: Body1 1
+    400054: Body1 10
+    400056: Body1 11
+    400058: Body1 12
+    400060: Body1 13
+    400062: Body1 14
+    400064: Body1 15
+    400066: Body1 16
+    400068: Body1 17
+    400070: Body1 18
+    400072: Body1 19
+    400074: Body1 2
+    400076: Body1 20
+    400078: Body1 21
+    400080: Body1 22
+    400082: Body1 23
+    400084: Body1 24
+    400086: Body1 25
+    400088: Body1 26
+    400090: Body1 27
+    400092: Body1 28
+    400094: Body1 29
+    400096: Body1 3
+    400098: Body1 4
+    400100: Body1 5
+    400102: Body1 6
+    400104: Body1 7
+    400106: Body1 8
+    400108: Body1 9
+    400110: Body6
+    400112: Body:1
+    400114: Component25
+    400116: Component25(Mirror)
+    400118: Component25(Mirror):1
+    400120: Component25:1
+    400122: Component6
+    400124: Component6 1
+    400126: Component6 2
+    400128: Component6 3
+    400130: Component6 4
+    400132: Component6 5
+    400134: Component6(Mirror)
+    400136: Component6(Mirror) 1
+    400138: Component6(Mirror) 2
+    400140: Component6(Mirror) 3
+    400142: Component6(Mirror) 4
+    400144: Component6(Mirror) 5
+    400146: Component6(Mirror):1
+    400148: Component6(Mirror):1 1
+    400150: Component6(Mirror):1 2
+    400152: Component6(Mirror):1 3
+    400154: Component6(Mirror):1 4
+    400156: Component6(Mirror):1 5
+    400158: Component6:1
+    400160: Component6:1 1
+    400162: Component6:1 2
+    400164: Component6:1 3
+    400166: Component6:1 4
+    400168: Component6:1 5
+    400170: Czujnik kontaktowy v1
+    400172: Czujnik kontaktowy v1 1
+    400174: Czujnik kontaktowy v1 2
+    400176: Czujnik kontaktowy v1(Mirror)
+    400178: Czujnik kontaktowy v1(Mirror) 1
+    400180: Czujnik kontaktowy v1(Mirror) 2
+    400182: Czujnik kontaktowy v1(Mirror):1
+    400184: Czujnik kontaktowy v1(Mirror):1 1
+    400186: Czujnik kontaktowy v1(Mirror):1 2
+    400188: Czujnik kontaktowy v1:1
+    400190: Czujnik kontaktowy v1:1 1
+    400192: Czujnik kontaktowy v1:1 2
+    400194: lydka
+    400196: lydka 1
+    400198: lydka 2
+    400200: lydka(Mirror)
+    400202: lydka(Mirror) 1
+    400204: lydka(Mirror) 2
+    400206: lydka(Mirror):1
+    400208: lydka(Mirror):1 1
+    400210: lydka(Mirror):1 2
+    400212: lydka:1
+    400214: lydka:1 1
+    400216: lydka:1 2
+    400218: Noga v11
+    400220: Noga v11 1
+    400222: Noga v11 2
+    400224: Noga v11:1
+    400226: Noga v11:2
+    400228: Noga v11:3
+    400230: Noga v4(Mirror)
+    400232: Noga v4(Mirror) 1
+    400234: Noga v4(Mirror) 2
+    400236: Noga v4(Mirror):1
+    400238: Noga v4(Mirror):2
+    400240: Noga v4(Mirror):3
+    400242: //RootNode
+    400244: Servo
+    400246: Servo 1
+    400248: Servo 2
+    400250: Servo 3
+    400252: Servo 4
+    400254: Servo 5
+    400256: Servo connector
+    400258: Servo connector 1
+    400260: Servo connector 10
+    400262: Servo connector 11
+    400264: Servo connector 2
+    400266: Servo connector 3
+    400268: Servo connector 4
+    400270: Servo connector 5
+    400272: Servo connector 6
+    400274: Servo connector 7
+    400276: Servo connector 8
+    400278: Servo connector 9
+    400280: Servo(Mirror)
+    400282: Servo(Mirror) 1
+    400284: Servo(Mirror) 2
+    400286: Servo(Mirror) 3
+    400288: Servo(Mirror) 4
+    400290: Servo(Mirror) 5
+    400292: Servo(Mirror):1
+    400294: Servo(Mirror):1 1
+    400296: Servo(Mirror):1 2
+    400298: Servo(Mirror):2
+    400300: Servo(Mirror):2 1
+    400302: Servo(Mirror):2 2
+    400304: Servo:1
+    400306: Servo:1 1
+    400308: Servo:1 2
+    400310: Servo:2
+    400312: Servo:2 1
+    400314: Servo:2 2
+    400316: Skrzydlo v1
+    400318: Skrzydlo v1 1
+    400320: Skrzydlo v1 2
+    400322: Skrzydlo v1 3
+    400324: Skrzydlo v1 4
+    400326: Skrzydlo v1 5
+    400328: Skrzydlo v1(Mirror) (2)
+    400330: Skrzydlo v1(Mirror) (2) 1
+    400332: Skrzydlo v1(Mirror) (2) 2
+    400334: Skrzydlo v1(Mirror) (2) 3
+    400336: Skrzydlo v1(Mirror) (2) 4
+    400338: Skrzydlo v1(Mirror) (2) 5
+    400340: Skrzydlo v1(Mirror) (2):1
+    400342: Skrzydlo v1(Mirror) (2):1 1
+    400344: Skrzydlo v1(Mirror) (2):1 2
+    400346: Skrzydlo v1(Mirror) (2):2
+    400348: Skrzydlo v1(Mirror) (2):2 1
+    400350: Skrzydlo v1(Mirror) (2):2 2
+    400352: Skrzydlo v1:1
+    400354: Skrzydlo v1:1 1
+    400356: Skrzydlo v1:1 2
+    400358: Skrzydlo v1:2
+    400360: Skrzydlo v1:2 1
+    400362: Skrzydlo v1:2 2
+    400364: udo
+    400366: udo 1
+    400368: udo 2
+    400370: udo(Mirror)
+    400372: udo(Mirror) 1
+    400374: udo(Mirror) 2
+    400376: udo(Mirror):1
+    400378: udo(Mirror):1 1
+    400380: udo(Mirror):1 2
+    400382: udo:1
+    400384: udo:1 1
+    400386: udo:1 2
+    2100000: Plastic - Matte (Yellow)
+    2100002: ABS (White)
+    2100004: Plastic - Glossy (Blue)
+    2100006: Opaque(25,25,25)
+    2100008: Opaque(255,206,127)
+    2100010: Opaque(255,255,255)
+    2100012: Opaque(255,242,232)
+    2100014: Steel - Satin
+    2300000: Body1
+    2300002: Body1 (1)
+    2300004: Body1 (1) 1
+    2300006: Body1 (1) 10
+    2300008: Body1 (1) 11
+    2300010: Body1 (1) 2
+    2300012: Body1 (1) 3
+    2300014: Body1 (1) 4
+    2300016: Body1 (1) 5
+    2300018: Body1 (1) 6
+    2300020: Body1 (1) 7
+    2300022: Body1 (1) 8
+    2300024: Body1 (1) 9
+    2300026: Body1 (2)
+    2300028: Body1 (2) 1
+    2300030: Body1 (2) 10
+    2300032: Body1 (2) 11
+    2300034: Body1 (2) 2
+    2300036: Body1 (2) 3
+    2300038: Body1 (2) 4
+    2300040: Body1 (2) 5
+    2300042: Body1 (2) 6
+    2300044: Body1 (2) 7
+    2300046: Body1 (2) 8
+    2300048: Body1 (2) 9
+    2300050: Body1 1
+    2300052: Body1 10
+    2300054: Body1 11
+    2300056: Body1 12
+    2300058: Body1 13
+    2300060: Body1 14
+    2300062: Body1 15
+    2300064: Body1 16
+    2300066: Body1 17
+    2300068: Body1 18
+    2300070: Body1 19
+    2300072: Body1 2
+    2300074: Body1 20
+    2300076: Body1 21
+    2300078: Body1 22
+    2300080: Body1 23
+    2300082: Body1 24
+    2300084: Body1 25
+    2300086: Body1 26
+    2300088: Body1 27
+    2300090: Body1 28
+    2300092: Body1 29
+    2300094: Body1 3
+    2300096: Body1 4
+    2300098: Body1 5
+    2300100: Body1 6
+    2300102: Body1 7
+    2300104: Body1 8
+    2300106: Body1 9
+    2300108: Body6
+    2300110: Servo connector
+    2300112: Servo connector 1
+    2300114: Servo connector 10
+    2300116: Servo connector 11
+    2300118: Servo connector 2
+    2300120: Servo connector 3
+    2300122: Servo connector 4
+    2300124: Servo connector 5
+    2300126: Servo connector 6
+    2300128: Servo connector 7
+    2300130: Servo connector 8
+    2300132: Servo connector 9
+    3300000: Body1
+    3300002: Body1 (1)
+    3300004: Body1 (1) 1
+    3300006: Body1 (1) 10
+    3300008: Body1 (1) 11
+    3300010: Body1 (1) 2
+    3300012: Body1 (1) 3
+    3300014: Body1 (1) 4
+    3300016: Body1 (1) 5
+    3300018: Body1 (1) 6
+    3300020: Body1 (1) 7
+    3300022: Body1 (1) 8
+    3300024: Body1 (1) 9
+    3300026: Body1 (2)
+    3300028: Body1 (2) 1
+    3300030: Body1 (2) 10
+    3300032: Body1 (2) 11
+    3300034: Body1 (2) 2
+    3300036: Body1 (2) 3
+    3300038: Body1 (2) 4
+    3300040: Body1 (2) 5
+    3300042: Body1 (2) 6
+    3300044: Body1 (2) 7
+    3300046: Body1 (2) 8
+    3300048: Body1 (2) 9
+    3300050: Body1 1
+    3300052: Body1 10
+    3300054: Body1 11
+    3300056: Body1 12
+    3300058: Body1 13
+    3300060: Body1 14
+    3300062: Body1 15
+    3300064: Body1 16
+    3300066: Body1 17
+    3300068: Body1 18
+    3300070: Body1 19
+    3300072: Body1 2
+    3300074: Body1 20
+    3300076: Body1 21
+    3300078: Body1 22
+    3300080: Body1 23
+    3300082: Body1 24
+    3300084: Body1 25
+    3300086: Body1 26
+    3300088: Body1 27
+    3300090: Body1 28
+    3300092: Body1 29
+    3300094: Body1 3
+    3300096: Body1 4
+    3300098: Body1 5
+    3300100: Body1 6
+    3300102: Body1 7
+    3300104: Body1 8
+    3300106: Body1 9
+    3300108: Body6
+    3300110: Servo connector
+    3300112: Servo connector 1
+    3300114: Servo connector 10
+    3300116: Servo connector 11
+    3300118: Servo connector 2
+    3300120: Servo connector 3
+    3300122: Servo connector 4
+    3300124: Servo connector 5
+    3300126: Servo connector 6
+    3300128: Servo connector 7
+    3300130: Servo connector 8
+    3300132: Servo connector 9
+    4300000: Body1
+    4300002: Body1 (1)
+    4300004: Body1 (2)
+    4300006: Body1
+    4300008: Body1
+    4300010: Body1
+    4300012: Servo connector
+    4300014: Body1
+    4300016: Body1 (1)
+    4300018: Body1 (2)
+    4300020: Body1
+    4300022: Body1
+    4300024: Servo connector
+    4300026: Body1
+    4300028: Body6
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
