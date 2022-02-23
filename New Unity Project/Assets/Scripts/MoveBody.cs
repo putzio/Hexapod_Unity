@@ -132,6 +132,11 @@ public class MoveBody : MonoBehaviour
         {
             leg.GetComponent<MoveLeg>().slave.GetComponent<Rotate2>().enabled = false;
         }
+        //We disable the legs, which just copy the moves of the first two legs
+        for (int i = 2; i < Legs.Length; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+        }
     }
     public void Back()
     {
@@ -144,6 +149,11 @@ public class MoveBody : MonoBehaviour
         foreach (GameObject leg in Legs)
         {
             leg.GetComponent<MoveLeg>().slave.GetComponent<Rotate2>().enabled = false;
+        }
+        //We disable the legs, which just copy the moves of the first two legs
+        for (int i = 2; i < Legs.Length; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
         }
     }
     public void Stop()
@@ -165,6 +175,16 @@ public class MoveBody : MonoBehaviour
         m1 = M.StartUp;
         GetComponent<Move>().axis = "X";
         GetComponent<Move>().active = 0;
+        //We disable the last two legs, which just copy the moves of the first two legs
+        for (int i = 4; i < Legs.Length; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+        }
+        //Enable middle legs, now they have different moves
+        for (int i = 2; i < Legs.Length-2; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = true;
+        }
     }
     public void Right()
     {
@@ -172,6 +192,16 @@ public class MoveBody : MonoBehaviour
         m1 = M.StartUp;
         GetComponent<Move>().axis = "X";
         GetComponent<Move>().active = 0;
+        //We disable the last two legs, which just copy the moves of the first two legs
+        for (int i = 4; i < Legs.Length; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+        }
+        //Enable middle legs, now they have different moves
+        for (int i = 2; i < Legs.Length-2; i++)
+        {
+            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = true;
+        }
     }
     private void StateMachine()
     {

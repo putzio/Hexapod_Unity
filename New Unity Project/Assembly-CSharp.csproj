@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CloseApp.cs" />
      <Compile Include="Assets\Scripts\ColorLerp.cs" />
      <Compile Include="Assets\Scripts\Leg_up.cs" />
      <Compile Include="Assets\Scripts\LimitRotation.cs" />
