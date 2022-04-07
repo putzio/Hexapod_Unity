@@ -18,7 +18,12 @@ public class MoveLeg : MonoBehaviour
     bool localControl = true;
     public bool done = true;
     int controlledPosition = 80;
-
+    public enum Axis
+    {
+        x,
+        y,
+        z
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -181,5 +186,19 @@ public class MoveLeg : MonoBehaviour
             StateInit();
         }
     }
-
+    public void UpdateLocalEulerAngles(float newAngle, string axis)
+    {
+        switch(axis)
+        {
+            case "x":
+                transform.localEulerAngles = new Vector3(newAngle, transform.localEulerAngles.y, transform.localEulerAngles.z);
+                break;
+            case "y":
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, newAngle, transform.localEulerAngles.z);
+                break;
+            case "z":
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, newAngle);
+                break;
+        }
+    }
 }

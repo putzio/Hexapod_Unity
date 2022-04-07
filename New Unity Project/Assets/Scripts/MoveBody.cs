@@ -90,11 +90,11 @@ public class MoveBody : MonoBehaviour
     void UpdateLinear()
     {
         float z = Legs[0].transform.localEulerAngles.z;
-        Legs[3].transform.localEulerAngles = new Vector3(Legs[3].transform.localEulerAngles.x, Legs[3].transform.localEulerAngles.y, z);
-        Legs[4].transform.localEulerAngles = new Vector3(Legs[4].transform.localEulerAngles.x, Legs[4].transform.localEulerAngles.y, z);
+        Legs[3].UpdateLocalEulerAngles(z,"z");
+        Legs[4].UpdateLocalEulerAngles(z, "z");
         z = Legs[1].transform.localEulerAngles.z;
-        Legs[2].transform.localEulerAngles = new Vector3(Legs[2].transform.localEulerAngles.x, Legs[2].transform.localEulerAngles.y, z);
-        Legs[5].transform.localEulerAngles = new Vector3(Legs[5].transform.localEulerAngles.x, Legs[5].transform.localEulerAngles.y, z);
+        Legs[2].UpdateLocalEulerAngles(z, "z");
+        Legs[5].UpdateLocalEulerAngles(z, "z");
 
         z = Legs[0].slave.transform.localEulerAngles.z;
         Legs[3].slave.transform.localEulerAngles = new Vector3(Legs[3].slave.transform.localEulerAngles.x, Legs[3].slave.transform.localEulerAngles.y, z);
@@ -106,9 +106,9 @@ public class MoveBody : MonoBehaviour
     void updateRotation()
     {
         float z = Legs[0].transform.localEulerAngles.z;
-        Legs[4].transform.localEulerAngles = new Vector3(Legs[4].transform.localEulerAngles.x, Legs[4].transform.localEulerAngles.y, z);
+        Legs[4].UpdateLocalEulerAngles(z, "z");
         z = Legs[1].transform.localEulerAngles.z;
-        Legs[5].transform.localEulerAngles = new Vector3(Legs[5].transform.localEulerAngles.x, Legs[5].transform.localEulerAngles.y, z);
+        Legs[5].UpdateLocalEulerAngles(z, "z");
 
         z = Legs[0].slave.transform.localEulerAngles.z;
         Legs[4].slave.transform.localEulerAngles = new Vector3(Legs[4].slave.transform.localEulerAngles.x, Legs[4].slave.transform.localEulerAngles.y, z);
