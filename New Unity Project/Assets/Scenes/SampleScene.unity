@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 12501575}
   - component: {fileID: 12501579}
   - component: {fileID: 12501578}
+  - component: {fileID: 12501580}
   - component: {fileID: 12501577}
   - component: {fileID: 12501576}
   m_Layer: 0
@@ -309,7 +310,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 1661164981}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!114 &12501577
 MonoBehaviour:
@@ -372,6 +384,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12501574}
   m_Mesh: {fileID: 4300012, guid: 28d296805452b024d8f0de0e0d8d3a7d, type: 3}
+--- !u!114 &12501580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12501574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 1661164981}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!1 &41576394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1213,7 @@ GameObject:
   - component: {fileID: 182474100}
   - component: {fileID: 182474099}
   - component: {fileID: 182474098}
+  - component: {fileID: 182474101}
   - component: {fileID: 182474097}
   m_Layer: 0
   m_Name: Servo connector 6
@@ -1234,7 +1265,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 1737365492}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!23 &182474099
 MeshRenderer:
@@ -1281,6 +1323,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182474095}
   m_Mesh: {fileID: 4300024, guid: 28d296805452b024d8f0de0e0d8d3a7d, type: 3}
+--- !u!114 &182474101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182474095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 1737365492}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!4 &232437721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b309c960ef7b2174cbca283b444f70e5,
@@ -2673,6 +2733,7 @@ GameObject:
   - component: {fileID: 590338477}
   - component: {fileID: 590338481}
   - component: {fileID: 590338480}
+  - component: {fileID: 590338482}
   - component: {fileID: 590338479}
   - component: {fileID: 590338478}
   m_Layer: 0
@@ -2709,7 +2770,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 41576395}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!114 &590338479
 MonoBehaviour:
@@ -2772,6 +2844,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590338476}
   m_Mesh: {fileID: 4300012, guid: 28d296805452b024d8f0de0e0d8d3a7d, type: 3}
+--- !u!114 &590338482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590338476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 41576395}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!1 &596026913
 GameObject:
   m_ObjectHideFlags: 0
@@ -6676,6 +6766,7 @@ GameObject:
   - component: {fileID: 1949587172}
   - component: {fileID: 1949587171}
   - component: {fileID: 1949587170}
+  - component: {fileID: 1949587173}
   - component: {fileID: 1949587169}
   m_Layer: 0
   m_Name: Servo connector 6
@@ -6727,7 +6818,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 562858289}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!23 &1949587171
 MeshRenderer:
@@ -6774,6 +6876,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949587167}
   m_Mesh: {fileID: 4300024, guid: 28d296805452b024d8f0de0e0d8d3a7d, type: 3}
+--- !u!114 &1949587173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949587167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 562858289}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!1 &1954193976
 GameObject:
   m_ObjectHideFlags: 0
@@ -7569,6 +7689,7 @@ GameObject:
   - component: {fileID: 2519665391166604904}
   - component: {fileID: 2519665391167375078}
   - component: {fileID: 2519665391168505126}
+  - component: {fileID: 2519665391166511694}
   - component: {fileID: 2519665391166511691}
   - component: {fileID: 2519665391166511689}
   m_Layer: 0
@@ -7590,7 +7711,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 2519665391166604906}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!1 &2519665391166511690
 GameObject:
@@ -7663,6 +7795,24 @@ MonoBehaviour:
   state: 0
   ForBackRanges: 000000001a0000000a00000037000000
   done: 1
+--- !u!114 &2519665391166511694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519665391166511688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 2519665391166604906}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!1 &2519665391166511704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7676,6 +7826,7 @@ GameObject:
   - component: {fileID: 2519665391168505142}
   - component: {fileID: 2519665391166511705}
   - component: {fileID: 2519665391166511709}
+  - component: {fileID: 2519665391166511707}
   m_Layer: 0
   m_Name: Servo connector 6
   m_TagString: Untagged
@@ -7695,7 +7846,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ae01d0f0b7bdc4b8657ab103f3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   Master: {fileID: 2519665391166604922}
+  b: {x: 0, y: 0, z: 0}
   h: 1.7
 --- !u!1 &2519665391166511706
 GameObject:
@@ -7717,6 +7879,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2519665391166511707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519665391166511704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d3fe151a10eab479bab224cce90aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Master: {fileID: 2519665391166604922}
+  h: 1.7
+  state: 0
+  speed: 70
+  done: 1
+  positions: 000000002d000000
 --- !u!114 &2519665391166511709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7907,12 +8087,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Legs:
-  - {fileID: 2519665391166511706}
-  - {fileID: 2519665391166511690}
-  - {fileID: 562858288}
-  - {fileID: 1661164980}
-  - {fileID: 1737365491}
-  - {fileID: 41576394}
+  - {fileID: 2519665391166511711}
+  - {fileID: 2519665391166511693}
+  - {fileID: 562858291}
+  - {fileID: 1661164983}
+  - {fileID: 1737365494}
+  - {fileID: 41576397}
   axis: X
   transVelocity: 1
   active: 0

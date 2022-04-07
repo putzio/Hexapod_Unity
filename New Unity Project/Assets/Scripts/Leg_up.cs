@@ -47,7 +47,7 @@ public class Leg_up : MonoBehaviour
         if (fracJourney > 0.9999)
         {
             if(state == 2)
-                GetComponent<Rotate2>().enabled = true;
+                GetComponent<RotateSlave>().enabled = true;
             state = 0;
             done = true;
         }
@@ -55,7 +55,7 @@ public class Leg_up : MonoBehaviour
     public void StateUp()
     {
         state = 1;
-        GetComponent<Rotate2>().enabled = false;
+        GetComponent<RotateSlave>().enabled = false;
         StateInit();
     }
     public void StateDown()

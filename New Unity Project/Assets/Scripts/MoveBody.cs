@@ -6,7 +6,7 @@ using System.Timers;
 
 public class MoveBody : MonoBehaviour
 {
-    public GameObject[] Legs;
+    public MoveLeg[] Legs;
     public string axis = "X";
     public float transVelocity = 1f;
     public bool active;
@@ -40,7 +40,7 @@ public class MoveBody : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = new float[5];
+        startPosition = new float[6];
         startPosition[0] = transform.localPosition.x;
         startPosition[1] = transform.localPosition.y;
         startPosition[2] = transform.localPosition.z;
@@ -96,12 +96,12 @@ public class MoveBody : MonoBehaviour
         Legs[2].transform.localEulerAngles = new Vector3(Legs[2].transform.localEulerAngles.x, Legs[2].transform.localEulerAngles.y, z);
         Legs[5].transform.localEulerAngles = new Vector3(Legs[5].transform.localEulerAngles.x, Legs[5].transform.localEulerAngles.y, z);
 
-        z = Legs[0].GetComponent<MoveLeg>().slave.transform.localEulerAngles.z;
-        Legs[3].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[3].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[3].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
-        Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
-        z = Legs[1].GetComponent<MoveLeg>().slave.transform.localEulerAngles.z;
-        Legs[2].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[2].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[2].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
-        Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
+        z = Legs[0].slave.transform.localEulerAngles.z;
+        Legs[3].slave.transform.localEulerAngles = new Vector3(Legs[3].slave.transform.localEulerAngles.x, Legs[3].slave.transform.localEulerAngles.y, z);
+        Legs[4].slave.transform.localEulerAngles = new Vector3(Legs[4].slave.transform.localEulerAngles.x, Legs[4].slave.transform.localEulerAngles.y, z);
+        z = Legs[1].slave.transform.localEulerAngles.z;
+        Legs[2].slave.transform.localEulerAngles = new Vector3(Legs[2].slave.transform.localEulerAngles.x, Legs[2].slave.transform.localEulerAngles.y, z);
+        Legs[5].slave.transform.localEulerAngles = new Vector3(Legs[5].slave.transform.localEulerAngles.x, Legs[5].slave.transform.localEulerAngles.y, z);
     }
     void updateRotation()
     {
@@ -110,10 +110,10 @@ public class MoveBody : MonoBehaviour
         z = Legs[1].transform.localEulerAngles.z;
         Legs[5].transform.localEulerAngles = new Vector3(Legs[5].transform.localEulerAngles.x, Legs[5].transform.localEulerAngles.y, z);
 
-        z = Legs[0].GetComponent<MoveLeg>().slave.transform.localEulerAngles.z;
-        Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[4].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
-        z = Legs[1].GetComponent<MoveLeg>().slave.transform.localEulerAngles.z;
-        Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles = new Vector3(Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles.x, Legs[5].GetComponent<MoveLeg>().slave.transform.localEulerAngles.y, z);
+        z = Legs[0].slave.transform.localEulerAngles.z;
+        Legs[4].slave.transform.localEulerAngles = new Vector3(Legs[4].slave.transform.localEulerAngles.x, Legs[4].slave.transform.localEulerAngles.y, z);
+        z = Legs[1].slave.transform.localEulerAngles.z;
+        Legs[5].slave.transform.localEulerAngles = new Vector3(Legs[5].slave.transform.localEulerAngles.x, Legs[5].slave.transform.localEulerAngles.y, z);
     }
     public void ResetPosition()
     {
@@ -128,14 +128,14 @@ public class MoveBody : MonoBehaviour
         GetComponent<Move>().axis = "Z";
         GetComponent<Move>().active = 0;
         //disable the Rotation2 script, it could be enabled after getting back from Left() or Right()
-        foreach(GameObject leg in Legs)
+        foreach(MoveLeg leg in Legs)
         {
-            leg.GetComponent<MoveLeg>().slave.GetComponent<Rotate2>().enabled = false;
+            leg.slave.GetComponent<RotateSlave>().enabled = false;
         }
         //We disable the legs, which just copy the moves of the first two legs
         for (int i = 2; i < Legs.Length; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = false;
         }
     }
     public void Back()
@@ -146,14 +146,14 @@ public class MoveBody : MonoBehaviour
         GetComponent<Move>().axis = "Z";
         GetComponent<Move>().active = 0;
         //disable the Rotation2 script, it could be enabled after getting back from Left() or Right()
-        foreach (GameObject leg in Legs)
+        foreach (MoveLeg leg in Legs)
         {
-            leg.GetComponent<MoveLeg>().slave.GetComponent<Rotate2>().enabled = false;
+            leg.slave.GetComponent<RotateSlave>().enabled = false;
         }
         //We disable the legs, which just copy the moves of the first two legs
         for (int i = 2; i < Legs.Length; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = false;
         }
     }
     public void Stop()
@@ -161,10 +161,10 @@ public class MoveBody : MonoBehaviour
         state = Mode.Stop;
         m1 = M.Zero;
         GetComponent<Move>().active = 0;
-        foreach(GameObject leg in Legs)
+        foreach(MoveLeg leg in Legs)
         {
-            leg.GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-            leg.GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
+            leg.slave.GetComponent<Leg_up>().StateDown();
+            leg.ControlledMove(M.Back, Mode.Back);
         }
 
         UpdateLinear();
@@ -178,12 +178,12 @@ public class MoveBody : MonoBehaviour
         //We disable the last two legs, which just copy the moves of the first two legs
         for (int i = 4; i < Legs.Length; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = false;
         }
         //Enable middle legs, now they have different moves
         for (int i = 2; i < Legs.Length-2; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = true;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = true;
         }
     }
     public void Right()
@@ -195,12 +195,12 @@ public class MoveBody : MonoBehaviour
         //We disable the last two legs, which just copy the moves of the first two legs
         for (int i = 4; i < Legs.Length; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = false;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = false;
         }
         //Enable middle legs, now they have different moves
         for (int i = 2; i < Legs.Length-2; i++)
         {
-            Legs[i].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().enabled = true;
+            Legs[i].slave.GetComponent<Leg_up>().enabled = true;
         }
     }
     private void StateMachine()
@@ -219,17 +219,17 @@ public class MoveBody : MonoBehaviour
                         case M.StartUp:
                             {
                                 //L1 Up
-                                Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                Legs[0].slave.GetComponent<Leg_up>().StateUp();
                                 m1 = M.StartWait;
                                 break;
                             }
                         case M.StartWait:
                             {
                                 //if L1 is up, go forward
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
+                                    Legs[0].ControlledMove(m1, state);
                                 }
                                 break;
                             }
@@ -237,13 +237,13 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1 forward is done and L2 back is done) 
                                 //L1 down, L2 up
-                                if (Legs[1].GetComponent<MoveLeg>().done)
+                                if (Legs[1].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true && Legs[1].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true && Legs[1].done == true)
                                 {
                                     m1 = M.Down;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateUp();
                                 }
                                 break;
                             }
@@ -251,11 +251,11 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1 is down and L2 is up) 
                                 //L1 Back L2 Front
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done && Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done && Legs[1].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Back;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Forward, state);
+                                    Legs[0].ControlledMove(m1, state);
+                                    Legs[1].ControlledMove(M.Forward, state);
                                     GetComponent<Move>().active = 1;
                                 }
                                 break;
@@ -264,13 +264,13 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1 back is done and L2 forward is done) 
                                 //L1 up, L2 down
-                                if (Legs[0].GetComponent<MoveLeg>().done)
+                                if (Legs[0].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true && Legs[1].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true && Legs[1].done == true)
                                 {
                                     m1 = M.Up;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateDown();
                                 }
                                 break;
                             }
@@ -278,11 +278,11 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1 is up and L2 is down) 
                                 //L1 Front L2 back
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done == true && Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done == true && Legs[1].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Back, state);
+                                    Legs[0].ControlledMove(m1, state);
+                                    Legs[1].ControlledMove(M.Back, state);
                                     GetComponent<Move>().active = 1;
                                 }
                                 break;
@@ -302,17 +302,17 @@ public class MoveBody : MonoBehaviour
                         case M.StartUp:
                             {
                                 //L1 Up
-                                Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                Legs[0].slave.GetComponent<Leg_up>().StateUp();
                                 m1 = M.StartWait;
                                 break;
                             }
                         case M.StartWait:
                             {
                                 //if L1 is up, go back
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Back;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
+                                    Legs[0].ControlledMove(m1, state);
                                 }
                                 break;
                             }
@@ -320,13 +320,13 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1 back is done and L2 forward is done) 
                                 //L1 down, L2 up
-                                if (Legs[0].GetComponent<MoveLeg>().done)
+                                if (Legs[0].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true && Legs[1].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true && Legs[1].done == true)
                                 {
                                     m1 = M.Down;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateUp();
                                 }
                                 break;
                             }
@@ -334,11 +334,11 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1 is down and L2 is up) 
                                 //L1 Front L2 Back
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done && Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done && Legs[1].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Back, state);
+                                    Legs[0].ControlledMove(m1, state);
+                                    Legs[1].ControlledMove(M.Back, state);
                                     GetComponent<Move>().active = 2;
                                 }
                                 break;
@@ -347,13 +347,13 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1 forward is done and L2 back is done) 
                                 //L1 up, L2 down
-                                if (Legs[1].GetComponent<MoveLeg>().done)
+                                if (Legs[1].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true && Legs[1].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true && Legs[1].done == true)
                                 {
                                     m1 = M.Up;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateDown();
                                 }
                                 break;
                             }
@@ -362,11 +362,11 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1 is up and L2 is down) 
                                 //L1 back L2 frorward
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done && Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done && Legs[1].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Back;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, state);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Forward, state);
+                                    Legs[0].ControlledMove(m1, state);
+                                    Legs[1].ControlledMove(M.Forward, state);
                                     GetComponent<Move>().active = 2;
                                 }
                                 break;
@@ -389,20 +389,20 @@ public class MoveBody : MonoBehaviour
                         case M.StartUp:
                             {
                                 //L1, L4 Up
-                                Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                Legs[0].slave.GetComponent<Leg_up>().StateUp();
+                                Legs[3].slave.GetComponent<Leg_up>().StateUp();
                                 m1 = M.StartWait;
                                 break;
                             }
                         case M.StartWait:
                             {
                                 //if L1 is up, go forward, L4 go back
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done && 
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done && 
+                                    Legs[3].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[3].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
+                                    Legs[0].ControlledMove(m1, Mode.Forward);
+                                    Legs[3].ControlledMove(M.Back, Mode.Back);
                                 }
                                 break;
                             }
@@ -410,18 +410,18 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1, L3 forward is done and L2 and L4 back is done ) 
                                 //L1, L4 down, L2,L3 up
-                                if (Legs[1].GetComponent<MoveLeg>().done)
+                                if (Legs[1].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true && 
-                                    Legs[1].GetComponent<MoveLeg>().done == true &&
-                                    Legs[2].GetComponent<MoveLeg>().done == true &&
-                                    Legs[3].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true && 
+                                    Legs[1].done == true &&
+                                    Legs[2].done == true &&
+                                    Legs[3].done == true)
                                 {
                                     m1 = M.Down;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[3].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[2].slave.GetComponent<Leg_up>().StateUp();
                                 }
                                 break;
                             }
@@ -429,16 +429,16 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1,L4 is down and L2,L3 is up) 
                                 //L1 Back L2 Front
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done && 
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done && 
+                                    Legs[1].slave.GetComponent<Leg_up>().done &&
+                                    Legs[2].slave.GetComponent<Leg_up>().done &&
+                                    Legs[3].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Back;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
-                                    Legs[3].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Back);
-                                    Legs[2].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Forward);
+                                    Legs[0].ControlledMove(m1, Mode.Forward);
+                                    Legs[1].ControlledMove(M.Back, Mode.Back);
+                                    Legs[3].ControlledMove(M.Forward, Mode.Back);
+                                    Legs[2].ControlledMove(M.Forward, Mode.Forward);
                                     GetComponent<Move>().active = 3;
                                 }
                                 break;
@@ -447,18 +447,18 @@ public class MoveBody : MonoBehaviour
                             {
                                 //if (L1 back is done and L2 forward is done) 
                                 //L1 up, L2 down
-                                if (Legs[0].GetComponent<MoveLeg>().done)
+                                if (Legs[0].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[0].GetComponent<MoveLeg>().done == true &&
-                                    Legs[1].GetComponent<MoveLeg>().done == true &&
-                                    Legs[2].GetComponent<MoveLeg>().done == true &&
-                                    Legs[3].GetComponent<MoveLeg>().done == true)
+                                if (Legs[0].done == true &&
+                                    Legs[1].done == true &&
+                                    Legs[2].done == true &&
+                                    Legs[3].done == true)
                                 {
                                     m1 = M.Up;
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[3].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[2].slave.GetComponent<Leg_up>().StateDown();
                                 }
                                 break;
                             }
@@ -466,16 +466,16 @@ public class MoveBody : MonoBehaviour
                             {
                                 //If (L1 is up and L2 is down) 
                                 //L1 Front L2 back
-                                if (Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[0].slave.GetComponent<Leg_up>().done &&
+                                    Legs[1].slave.GetComponent<Leg_up>().done &&
+                                    Legs[2].slave.GetComponent<Leg_up>().done &&
+                                    Legs[3].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Back);
-                                    Legs[3].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
-                                    Legs[2].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
+                                    Legs[0].ControlledMove(m1, Mode.Forward);
+                                    Legs[1].ControlledMove(M.Forward, Mode.Back);
+                                    Legs[3].ControlledMove(M.Back, Mode.Back);
+                                    Legs[2].ControlledMove(M.Back, Mode.Back);
                                     GetComponent<Move>().active = 3;
                                 }
                                 break;
@@ -500,84 +500,84 @@ public class MoveBody : MonoBehaviour
                             }
                         case M.StartUp:
                             {
-                                Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                Legs[1].slave.GetComponent<Leg_up>().StateUp();
+                                Legs[2].slave.GetComponent<Leg_up>().StateUp();
                                 m1 = M.StartWait;
                                 break;
                             }
                         case M.StartWait:
                             {
-                                if (Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[1].slave.GetComponent<Leg_up>().done &&
+                                    Legs[2].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[2].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
+                                    Legs[1].ControlledMove(m1, Mode.Forward);
+                                    Legs[2].ControlledMove(M.Back, Mode.Back);
                                 }
                                 break;
                             }
                         case M.Forward:
                             {
-                                if (Legs[1].GetComponent<MoveLeg>().done)
+                                if (Legs[1].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[1].GetComponent<MoveLeg>().done == true &&
-                                    Legs[0].GetComponent<MoveLeg>().done == true &&
-                                    Legs[3].GetComponent<MoveLeg>().done == true &&
-                                    Legs[2].GetComponent<MoveLeg>().done == true)
+                                if (Legs[1].done == true &&
+                                    Legs[0].done == true &&
+                                    Legs[3].done == true &&
+                                    Legs[2].done == true)
                                 {
                                     m1 = M.Down;
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[2].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[3].slave.GetComponent<Leg_up>().StateUp();
                                 }
                                 break;
                             }
                         case M.Down:
                             {
-                                if (Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[1].slave.GetComponent<Leg_up>().done &&
+                                    Legs[0].slave.GetComponent<Leg_up>().done &&
+                                    Legs[3].slave.GetComponent<Leg_up>().done &&
+                                    Legs[2].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Back;
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
-                                    Legs[2].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Back);
-                                    Legs[3].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Forward);
+                                    Legs[1].ControlledMove(m1, Mode.Forward);
+                                    Legs[0].ControlledMove(M.Back, Mode.Back);
+                                    Legs[2].ControlledMove(M.Forward, Mode.Back);
+                                    Legs[3].ControlledMove(M.Forward, Mode.Forward);
                                     GetComponent<Move>().active = 4;
                                 }
                                 break;
                             }
                         case M.Back:
                             {
-                                if (Legs[1].GetComponent<MoveLeg>().done)
+                                if (Legs[1].done)
                                     GetComponent<Move>().active = 0;
-                                if (Legs[1].GetComponent<MoveLeg>().done == true &&
-                                    Legs[0].GetComponent<MoveLeg>().done == true &&
-                                    Legs[3].GetComponent<MoveLeg>().done == true &&
-                                    Legs[2].GetComponent<MoveLeg>().done == true)
+                                if (Legs[1].done == true &&
+                                    Legs[0].done == true &&
+                                    Legs[3].done == true &&
+                                    Legs[2].done == true)
                                 {
                                     m1 = M.Up;
-                                    Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateUp();
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[1].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[0].slave.GetComponent<Leg_up>().StateDown();
+                                    Legs[2].slave.GetComponent<Leg_up>().StateUp();
+                                    Legs[3].slave.GetComponent<Leg_up>().StateDown();
                                 }
                                 break;
                             }
                         case M.Up:
                             {
-                                if (Legs[1].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[0].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[3].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done &&
-                                    Legs[2].GetComponent<MoveLeg>().slave.GetComponent<Leg_up>().done)
+                                if (Legs[1].slave.GetComponent<Leg_up>().done &&
+                                    Legs[0].slave.GetComponent<Leg_up>().done &&
+                                    Legs[3].slave.GetComponent<Leg_up>().done &&
+                                    Legs[2].slave.GetComponent<Leg_up>().done)
                                 {
                                     m1 = M.Forward;
-                                    Legs[1].GetComponent<MoveLeg>().ControlledMove(m1, Mode.Forward);
-                                    Legs[0].GetComponent<MoveLeg>().ControlledMove(M.Forward, Mode.Back);
-                                    Legs[2].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
-                                    Legs[3].GetComponent<MoveLeg>().ControlledMove(M.Back, Mode.Back);
+                                    Legs[1].ControlledMove(m1, Mode.Forward);
+                                    Legs[0].ControlledMove(M.Forward, Mode.Back);
+                                    Legs[2].ControlledMove(M.Back, Mode.Back);
+                                    Legs[3].ControlledMove(M.Back, Mode.Back);
                                     GetComponent<Move>().active = 4;
                                 }
                                 break;

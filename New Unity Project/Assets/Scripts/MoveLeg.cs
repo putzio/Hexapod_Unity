@@ -25,8 +25,8 @@ public class MoveLeg : MonoBehaviour
     {
         startTime = Time.time;
         
-        ForBackRanges[1] = (int)slave.GetComponent<Rotate2>().Calculate(positions[0]);
-        ForBackRanges[3] = (int)slave.GetComponent<Rotate2>().Calculate(positions[1]);
+        ForBackRanges[1] = (int)slave.GetComponent<RotateSlave>().Calculate(positions[0]);
+        ForBackRanges[3] = (int)slave.GetComponent<RotateSlave>().Calculate(positions[1]);
         ForBackRanges[0] = ForBackRanges[1] - 35;
         ForBackRanges[2] = ForBackRanges[3] - 35;
         for(int i = 0; i< 4; i++)
